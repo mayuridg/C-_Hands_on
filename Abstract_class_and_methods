@@ -1,0 +1,29 @@
+
+using System;
+ abstract class absp                    //abstract class contains abstract method.
+{
+    public abstract void add(int a,int b); //abstract method in a parent class declaration
+   
+    public void sub(int c,int d)
+    {
+        Console.WriteLine("this is a parents subtraction method "+(c-d));
+    }
+    
+}
+class absc:absp
+{
+   
+    public override void add(int x,int y)  //Abstract method from parent class defined in a child class
+    {
+       Console.WriteLine("this is a childs override method " +(x+y));
+    }
+    static void Main(String[] arg)
+    {
+        absc c1=new absc();
+        c1.add(213,456);
+        c1.sub(123,100);
+        absp p1=c1;  //parents class initialization using child class's refernce object.
+        p1.add(100,234);
+        p1.sub(234,56);
+    }
+}
